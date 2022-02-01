@@ -1,0 +1,63 @@
+@import "~foundation-sites/scss/foundation";
+@import "./src/styles/base/variables";
+@import "./src/styles/base/mixins";
+
+.Footer {
+    &__Menus {
+        padding-top: $vspace-xs;
+        padding-bottom: $vspace-xs;
+        border-bottom: 1px solid $color-gray-medium-light;
+    }
+
+    &__Bottom {
+        @include font-size("secondary", "xs");
+
+        padding-top: $vspace-xs / 2;
+        padding-bottom: $vspace-xs / 2;
+        justify-content: flex-start;
+        align-items: center;
+
+        @include breakpoint(medium) {
+            @include font-size("secondary", "md");
+            justify-content: space-between;
+        }
+    }
+
+    &__Logo {
+        display: block;
+        width: 180px;
+        margin-top: 10px;
+
+        @include breakpoint(mobile down) {
+            width: 150px;
+            margin-bottom: $vspace-xs / 2;
+        }
+    }
+
+    &__Copyrights {
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+
+        @include breakpoint(mobile down) {
+            justify-content: flex-start;
+            flex-wrap: wrap;
+        }
+
+        :first-child {
+            line-height: 1.3em;
+
+            &:not(:only-child) {
+                padding-right: 15px;
+                margin-right: 15px;
+                border-right: 1px solid $color-dark;
+
+                @include breakpoint(mobile down) {
+                    width: 100%;
+                    border-right: 0;
+                    margin-bottom: 10px;
+                }
+            }
+        }
+    }
+}

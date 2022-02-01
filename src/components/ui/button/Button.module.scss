@@ -1,0 +1,198 @@
+@import "../../../../node_modules/foundation-sites/scss/foundation";
+@import "../../../styles/base/variables";
+@import "../../../styles/base/mixins";
+
+.Button {
+    @include gradient-background;
+    @include font-size("secondary", "xs");
+
+    position: relative;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    min-height: 50px;
+    padding: 15px 26px;
+    border: none;
+    font-weight: bold;
+    color: $color-white;
+    letter-spacing: 0.05em;
+    cursor: pointer;
+
+    @include breakpoint(mobile) {
+        width: auto;
+        justify-content: space-between;
+    }
+
+    @include breakpoint(medium) {
+        @include font-size("secondary", "md");
+    }
+
+    &:focus {
+        transform: scale(0.95);
+        outline: none;
+    }
+
+    &:hover {
+        color: $color-white;
+        box-shadow: 0 10px 40px rgba($color-black, 0.15);
+    }
+
+    &:disabled {
+        background: $color-gray;
+        cursor: default;
+
+        &:focus {
+            transform: scale(1);
+        }
+
+        &:hover {
+            box-shadow: none;
+        }
+    }
+
+    &--IsIconRight {
+        padding-right: 22px;
+
+        @include breakpoint(medium) {
+            min-width: 196px;
+        }
+
+        .Label {
+            margin-right: 15px;
+        }
+    }
+
+    &--IsIconLeft {
+        padding-left: 20px;
+    }
+
+    &--IsLarge {
+        @include font-size("base", "xs");
+        width: auto;
+
+        min-height: 50px;
+        padding: 15px 23px;
+
+        @include breakpoint(medium) {
+            @include font-size("base", "md");
+        }
+
+        @include breakpoint(xlarge) {
+            min-height: 55px;
+            padding: 18px 25px;
+        }
+    }
+
+    &--IsSmall {
+        width: auto;
+        min-height: 30px;
+        padding: 5px 12px;
+
+        @include breakpoint(medium) {
+            min-height: 40px;
+            padding: 10px 14px;
+        }
+
+        &.Button--IsIconLeft {
+            padding-left: 14px;
+        }
+
+        &.Button--IsIconRight {
+            min-width: 0;
+        }
+    }
+
+    &--IsPlay {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 55px;
+        height: 55px;
+        border-radius: 50%;
+        box-shadow: 0 0 40px $color-brand;
+
+        @include breakpoint(medium) {
+            width: 90px;
+            height: 90px;
+        }
+
+        svg {
+            width: 40px;
+            height: 40px;
+        }
+
+        &:hover {
+            &::after {
+                opacity: 0;
+                width: 55px;
+                height: 55px;
+            }
+        }
+
+        &::after {
+            content: "";
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 65px;
+            height: 65px;
+            border: 2px solid $color-brand;
+            border-radius: 50%;
+            transform: translate(-50%, -50%);
+            transition: 0.3s $easing-default;
+
+            @include breakpoint(medium) {
+                width: 105px;
+                height: 105px;
+                border: 3px solid $color-brand;
+            }
+        }
+
+        &::before {
+            content: "";
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 0;
+            height: 0;
+            border-top: 10px solid transparent;
+            border-bottom: 10px solid transparent;
+            border-left: 15px solid $color-white;
+
+            @include breakpoint(medium) {
+                border-top: 15px solid transparent;
+                border-bottom: 15px solid transparent;
+                border-left: 25px solid $color-white;
+            }
+        }
+    }
+
+    &--IsXSmall {
+        min-height: 30px;
+        padding: 5px 10px;
+    }
+}
+
+.Label {
+    @include breakpoint(medium) {
+        flex-grow: 1;
+    }
+
+    .Button--IsIcon & {
+        margin-right: 20px;
+    }
+}
+
+.IconRight {
+    margin-left: 0;
+
+    @include breakpoint(medium) {
+        margin-left: auto;
+    }
+}
+
+.IconLeft {
+    margin-right: 15px;
+}

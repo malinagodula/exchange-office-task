@@ -1,0 +1,67 @@
+.Button {
+  //   @include gradient-background;
+  //   @include font-size("secondary", "xs");
+
+  position: relative;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  min-height: 50px;
+  padding: 15px 26px;
+  border: none;
+  font-weight: bold;
+  //   color: $color-white;
+  letter-spacing: 0.05em;
+  cursor: pointer;
+
+  //   @include breakpoint(mobile) {
+  //     width: auto;
+  //     justify-content: space-between;
+  //   }
+
+  //   @include breakpoint(medium) {
+  //     @include font-size("secondary", "md");
+  //   }
+
+  &:focus {
+    transform: scale(0.95);
+    outline: none;
+  }
+
+  &:hover {
+    // color: $color-white;
+    // box-shadow: 0 10px 40px rgba($color-black, 0.15);
+  }
+
+  &:disabled {
+    // background: $color-gray;
+    cursor: default;
+
+    &:focus {
+      transform: scale(1);
+    }
+
+    &:hover {
+      box-shadow: none;
+    }
+  }
+
+  &--IsIconLeft {
+    padding-left: 20px;
+  }
+}
+
+.Label {
+  //   @include breakpoint(medium) {
+  //     flex-grow: 1;
+  //   }
+
+  .Button--IsIcon & {
+    margin-right: 20px;
+  }
+}
+
+.IconLeft {
+  margin-right: 15px;
+}

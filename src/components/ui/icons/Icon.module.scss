@@ -1,0 +1,48 @@
+@import "../../../styles/base/variables";
+
+$icon-sizes: (16, 24, 32, 48, 72, 96, 132);
+
+.Icon {
+    display: inline-block;
+    flex-shrink: 0;
+    color: inherit;
+    transition: 0.3s $easing-default;
+    stroke-width: 2;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+
+    &--16 {
+        width: 16px;
+        height: 16px;
+    }
+
+    &--24 {
+        width: 24px;
+        height: 24px;
+    }
+
+    &--32 {
+        width: 32px;
+        height: 32px;
+    }
+
+    &--48 {
+        width: 48px;
+        height: 48px;
+    }
+
+    &--72 {
+        width: 72px;
+        height: 72px;
+    }
+
+    &--96 {
+        width: 96px;
+        height: 96px;
+    }
+
+    &--132 {
+        width: 132px;
+        height: 132px;
+    }
+}
