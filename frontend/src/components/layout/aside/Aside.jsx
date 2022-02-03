@@ -7,7 +7,7 @@ import {
 
 function Aside() {
   return (
-    <aside className=" relative flex flex-col flex-wrap bg-white border-r border-slate-300 p-6 flex-none w-64 h-screen shadow-xl animated faster">
+    <aside className=" relative flex flex-col flex-wrap bg-white border-r border-slate-300 p-6 flex-none w-64 mt-16 md:mt-20 shadow-xl animated faster">
       <p className="uppercase text-xs text-slate-600 mb-4 tracking-wider">
         ASIDE
       </p>
