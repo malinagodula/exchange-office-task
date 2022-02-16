@@ -23,17 +23,10 @@ messagesRouter.get("/public-message", (req, res) => {
   });
 });
 
-messagesRouter.get(
-  "/protected-message",
-  protect,
-
-  (req, res) => {
-    const { name, email } = User.findById(req.user._id);
-    res.status(200).send({
-      hello: name,
-      "your email is": email,
-    });
-  }
-);
+messagesRouter.get("/protected-message", protect, (req, res) => {
+  res.status(200).send({
+    message: "PRIVATE: The API successfully validated your access token.",
+  });
+});
 
 module.exports = messagesRouter;
