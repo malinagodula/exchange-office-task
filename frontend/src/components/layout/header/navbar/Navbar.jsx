@@ -1,23 +1,43 @@
-import React, { useState } from "react";
-import Dropdown from "./Dropdown";
-import classnames from "classnames";
-import { ChevronDownIcon } from "@heroicons/react/outline";
+import React from "react";
+import { NavLink } from "react-router-dom";
+// import Dropdown from "./Dropdown";
+// import classnames from "classnames";
+// import { ChevronDownIcon } from "@heroicons/react/outline";
 // import styles from "./Navbar.module.scss";
-const Navbar = () => {
-  const [profileVisible, setProfileVIsible] = useState(false);
 
-  const profileVisibilityHandler = () => {
-    setProfileVIsible((prev) => !prev);
-  };
+import AuthButtons from "../../../auth/AuthButtons";
+const Navbar = () => {
+  // const [profileVisible, setProfileVIsible] = useState(false);
+
+  // const profileVisibilityHandler = () => {
+  //   setProfileVIsible((prev) => !prev);
+  // };
 
   return (
     <div
       id="navbar"
       className="animated bg-white flex-1 pl-3 flex flex-row flex-wrap justify-end items-center md:items-center"
     >
+      <nav>
+        <ul className="flex">
+          <li className="ml-2 text-xs">
+            <NavLink to="/">Homepage</NavLink>
+          </li>
+          <li className="ml-2 text-xs">
+            <NavLink to="/dashboard">Dashboard</NavLink>
+          </li>
+          <li className="ml-2 text-xs">
+            <NavLink to="/profile">Profile</NavLink>
+          </li>
+          <li className="ml-2 text-xs">
+            <NavLink to="/external-api">API</NavLink>
+          </li>
+        </ul>
+      </nav>
       <div className="flex flex-row-reverse items-center">
         <div className="dropdown relative md:static">
-          <button
+          <AuthButtons />
+          {/* <button
             className="menu-btn focus:outline-none focus:shadow-outline flex flex-wrap items-center"
             onClick={profileVisibilityHandler}
           >
@@ -36,9 +56,9 @@ const Navbar = () => {
               />
               <ChevronDownIcon className="h-4 w-4 slate-900 ml-2" />
             </div>
-          </button>
+          </button> */}
 
-          {profileVisible && (
+          {/* {profileVisible && (
             <>
               <button
                 className={classnames(
@@ -51,7 +71,7 @@ const Navbar = () => {
               ></button>
               <Dropdown />
             </>
-          )}
+          )} */}
         </div>
       </div>
     </div>

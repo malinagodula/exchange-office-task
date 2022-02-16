@@ -1,3 +1,6 @@
+import { withAuthenticationRequired } from "@auth0/auth0-react";
+import Loader from "../../ui/loader/Loader";
+
 import Aside from "../../layout/aside/Aside";
 import Card from "../../common/card/Card";
 function Dashboard() {
@@ -18,4 +21,6 @@ function Dashboard() {
   );
 }
 
-export default Dashboard;
+export default withAuthenticationRequired(Dashboard, {
+  onRedirecting: () => <Loader />,
+});

@@ -1,4 +1,5 @@
 import { useState, useRef } from "react";
+import { useAuth0 } from "@auth0/auth0-react";
 import Button from "../ui/button/Button";
 
 // import classes from "./AuthForm.module.css";
@@ -6,6 +7,8 @@ import Button from "../ui/button/Button";
 const AuthForm = () => {
   const emailInputRef = useRef();
   const passwordInputRef = useRef();
+
+  // const { loginWithRedirect } = useAuth0();
 
   const [isLogin, setIsLogin] = useState(true);
 
