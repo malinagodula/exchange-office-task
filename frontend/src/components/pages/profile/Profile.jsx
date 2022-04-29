@@ -7,7 +7,7 @@ function Profile() {
 
   return (
     <>
-      <Aside />
+      {/* <Aside /> */}
       <div className="bg-gray-100 flex-1 p-6  mt-16 md:mt-20">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
           <h1>User Profile</h1>
