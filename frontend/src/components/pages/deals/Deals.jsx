@@ -11,7 +11,6 @@ import {
 } from "../../../store/deals/dealSlice";
 // import { selectUser } from "../../../store/auth/authSlice";
 function Deals() {
-  // const serverUrl = process.env.REACT_APP_SERVER_URL;
   const { getAccessTokenSilently } = useAuth0();
 
   const { deals, isLoading, isError, message } = useSelector(
