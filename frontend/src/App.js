@@ -28,7 +28,6 @@ function App() {
     getAccessTokenSilently().then((token) => dispatch(getLoggedUser(token)));
   }, [getAccessTokenSilently, dispatch, isError, message]);
 
-  console.log(getAccessTokenSilently());
   if (isLoading) {
     return <Loader />;
   }

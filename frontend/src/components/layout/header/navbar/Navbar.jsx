@@ -1,5 +1,6 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
+import { useAuth0 } from "@auth0/auth0-react";
 // import Dropdown from "./Dropdown";
 // import classnames from "classnames";
 // import { ChevronDownIcon } from "@heroicons/react/outline";
@@ -13,6 +14,8 @@ const Navbar = () => {
   //   setProfileVIsible((prev) => !prev);
   // };
 
+  const { isAuthenticated } = useAuth0();
+
   return (
     <div
       id="navbar"
@@ -20,21 +23,22 @@ const Navbar = () => {
     >
       <nav>
         <ul className="flex">
-          <li className="ml-2 text-xs">
-            <NavLink to="/">Homepage</NavLink>
-          </li>
-          <li className="ml-2 text-xs">
-            <NavLink to="/dashboard">Dashboard</NavLink>
-          </li>
-          <li className="ml-2 text-xs">
-            <NavLink to="/profile">Profile</NavLink>
-          </li>
-          <li className="ml-2 text-xs">
-            <NavLink to="/external-api">API</NavLink>
-          </li>
-          <li className="ml-2 text-xs">
-            <NavLink to="/api/goals">GOALS</NavLink>
-          </li>
+          {isAuthenticated && (
+            <>
+              <li className="ml-2 text-xs">
+                <NavLink to="/dashboard">Dashboard</NavLink>
+              </li>
+              <li className="ml-2 text-xs">
+                <NavLink to="/profile">Profile</NavLink>
+              </li>
+              <li className="ml-2 text-xs">
+                <NavLink to="/external-api">API</NavLink>
+              </li>
+              <li className="ml-2 text-xs">
+                <NavLink to="/api/goals">GOALS</NavLink>
+              </li>
+            </>
+          )}
         </ul>
       </nav>
       <div className="flex flex-row-reverse items-center">
@@ -60,21 +64,6 @@ const Navbar = () => {
               <ChevronDownIcon className="h-4 w-4 slate-900 ml-2" />
             </div>
           </button> */}
-
-          {/* {profileVisible && (
-            <>
-              <button
-                className={classnames(
-                  "fixed top-0 left-0 z-10 w-full h-full menu-overflow hidden"
-                  // styles.Backdrop
-                  // {
-                  //   [styles.Backdrop]: profileVisible,
-                  // }
-                )}
-              ></button>
-              <Dropdown />
-            </>
-          )} */}
         </div>
       </div>
     </div>

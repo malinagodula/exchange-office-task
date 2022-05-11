@@ -34,17 +34,6 @@ const AuthButtons = () => {
       <Button type="button" styles={"ml-2"} action={() => loginWithRedirect()}>
         Log In
       </Button>
-      {/* <Button
-        type="button"
-        styles={"ml-2"}
-        action={() =>
-          logout({
-            returnTo: window.location.origin,
-          })
-        }
-      >
-        Log Out
-      </Button> */}
     </>
   );
 };

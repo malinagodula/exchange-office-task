@@ -15,28 +15,7 @@ function Dashboard() {
     (state) => state.currency
   );
   const dispatch = useDispatch();
-
-  // const serverUrl = process.env.REACT_APP_SERVER_URL;
-  // const [currencies, setCurrencies] = useState([]);
-  // const getCurrencies = async () => {
-  //   try {
-  //     const response = await fetch(
-  //       `http://webtask.future-processing.com:8068/currencies`,
-  //       {
-  //         headers: {},
-  //       }
-  //     );
-
-  //     const responseData = await response.json();
-
-  //     setCurrencies(responseData.items);
-  //   } catch (error) {
-  //     setCurrencies(error.message);
-  //   }
-  // };
-
   useEffect(() => {
-    // getCurrencies();
     if (isError) {
       console.log(message);
     }

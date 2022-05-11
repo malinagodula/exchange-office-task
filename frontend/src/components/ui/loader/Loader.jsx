@@ -3,7 +3,7 @@ const loadingImg =
   "https://cdn.auth0.com/blog/auth0-react-sample/assets/loading.svg";
 
 const Loader = () => (
-  <div className="spinner">
+  <div className="m-[90px]">
     <img src={loadingImg} alt="Loading..." />
   </div>
 );

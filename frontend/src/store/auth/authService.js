@@ -14,9 +14,8 @@ const getLoggedUser = async (token) => {
   if (!response.ok) {
     throw new Error("Request failed!");
   }
-  const elo = response.json();
-  console.log(elo);
-  return elo;
+
+  return response.json();
 };
 
 const authService = {
