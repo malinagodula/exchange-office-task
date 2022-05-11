@@ -10,7 +10,7 @@ import {
   dealActions,
 } from "../../../store/deals/dealSlice";
 // import { selectUser } from "../../../store/auth/authSlice";
-function Goals() {
+function Deals() {
   // const serverUrl = process.env.REACT_APP_SERVER_URL;
   const { getAccessTokenSilently } = useAuth0();
 
@@ -20,8 +20,6 @@ function Goals() {
 
   // const { user } = useSelector((state) => state.auth);
   // console.log(user);
-  // const user2 = useSelector(selectUser);
-  // console.log(user2);
 
   const dispatch = useDispatch();
 
@@ -56,7 +54,7 @@ function Goals() {
       {/* <Aside /> */}
       <div className="bg-gray-100 flex-1 p-6  mt-16 md:mt-20">
         <div className="grid grid-cols-1 md:grid-cols-1 gap-6">
-          <h1>User Goals from backend</h1>
+          <h1>User Deals from backend</h1>
           {deals &&
             deals.map((deal, index) => (
               <div
@@ -74,9 +72,10 @@ function Goals() {
             ))}
 
           <div>
+            testowe sprawdzenie czy działa API:
             <form onSubmit={onSubmit}>
               <label className="mb-1" htmlFor="password">
-                goal.text
+                {/* deal.text */}
               </label>
               <br />
               <input
@@ -95,7 +94,7 @@ function Goals() {
                 type="submit"
                 className="bg-slate-400 text-white hover:bg-slate-500 text-xs my-1 py-2 px-4"
               >
-                SET logged user goal
+                SET logged user deal
               </button>
             </form>
           </div>
@@ -105,6 +104,6 @@ function Goals() {
   );
 }
 
-export default withAuthenticationRequired(Goals, {
+export default withAuthenticationRequired(Deals, {
   onRedirecting: () => <Loader />,
 });

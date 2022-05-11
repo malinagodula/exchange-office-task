@@ -12,7 +12,7 @@ import Profile from "./components/pages/profile/Profile";
 import ExternalApi from "./components/pages/external-api/ExternalApi";
 import Homepage from "./components/pages/homepage/Homepage";
 import Loader from "./components/ui/loader/Loader";
-import Goals from "./components/pages/goals/Goals";
+import Deals from "./components/pages/deals/Deals";
 
 import { useAuth0 } from "@auth0/auth0-react";
 
@@ -41,7 +41,7 @@ function App() {
           <Route path="/dashboard" element={<Dashboard />} />
           <Route path="/profile" element={<Profile />} />
           <Route path="/external-api" element={<ExternalApi />} />
-          <Route path="/api/goals" element={<Goals />} />
+          <Route path="/api/deals" element={<Deals />} />
         </Routes>
       </main>
       {/* <Footer /> */}

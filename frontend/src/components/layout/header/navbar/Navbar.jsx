@@ -2,9 +2,7 @@ import React from "react";
 import { NavLink } from "react-router-dom";
 import { useAuth0 } from "@auth0/auth0-react";
 // import Dropdown from "./Dropdown";
-// import classnames from "classnames";
 // import { ChevronDownIcon } from "@heroicons/react/outline";
-// import styles from "./Navbar.module.scss";
 
 import AuthButtons from "../../../auth/AuthButtons";
 const Navbar = () => {
@@ -31,11 +29,11 @@ const Navbar = () => {
               <li className="ml-2 text-xs">
                 <NavLink to="/profile">Profile</NavLink>
               </li>
-              <li className="ml-2 text-xs">
+              {/* <li className="ml-2 text-xs">
                 <NavLink to="/external-api">API</NavLink>
-              </li>
+              </li> */}
               <li className="ml-2 text-xs">
-                <NavLink to="/api/goals">GOALS</NavLink>
+                <NavLink to="/api/deals">Deals</NavLink>
               </li>
             </>
           )}

@@ -11,11 +11,18 @@ function Profile() {
       {/* <Aside /> */}
       <div className="bg-gray-100 flex-1 p-6  mt-16 md:mt-20">
         <div className="grid grid-cols-1 md:grid-cols-1 gap-6">
-          <h1>User Profile</h1>
-          <h2>{JSON.stringify(user, null, 2)}</h2>
-          <h2>{user.email}</h2>
+          <h1>
+            <strong>User Profile</strong>
+          </h1>
+          <p>{user.email}</p>
 
-          {!user.wallet ? <>tutaj formularz</> : <>portfel</>}
+          {!user.wallet ? (
+            <div className="border-solid border-2 border-gray-600 p-2">
+              tutaj formularz z deklaracją portfela
+            </div>
+          ) : (
+            <>portfel</>
+          )}
         </div>
       </div>
     </>

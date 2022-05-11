@@ -1,6 +1,6 @@
 const mongoose = require("mongoose");
 
-const goalSchema = mongoose.Schema(
+const dealSchema = mongoose.Schema(
   {
     user: {
       type: String,
@@ -17,4 +17,4 @@ const goalSchema = mongoose.Schema(
   }
 );
 
-module.exports = mongoose.model("Goal", goalSchema);
+module.exports = mongoose.model("Deal", dealSchema);

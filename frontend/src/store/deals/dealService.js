@@ -3,7 +3,7 @@ const serverUrl = process.env.REACT_APP_SERVER_URL;
 // Create new deal
 const createDeal = async (data) => {
   const token = data.token.replace('"', "");
-  const response = await fetch(`${serverUrl}/api/goals`, {
+  const response = await fetch(`${serverUrl}/api/deals`, {
     method: "POST", // or 'PUT'
     headers: {
       Authorization: `Bearer ${token}`,
@@ -22,7 +22,7 @@ const createDeal = async (data) => {
 
 // Get logged user deals
 const getDeals = async (token) => {
-  const response = await fetch(`${serverUrl}/api/goals`, {
+  const response = await fetch(`${serverUrl}/api/deals`, {
     method: "GET",
     headers: {
       Authorization: `Bearer ${token}`,

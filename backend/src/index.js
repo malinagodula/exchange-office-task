@@ -14,7 +14,7 @@ const connectDB = require("./config/db");
 connectDB();
 
 const messageRoutes = require("./routes/messageRoutes");
-const goalRoutes = require("./routes/goalRoutes");
+const dealRoutes = require("./routes/dealRoutes");
 const userRoutes = require("./routes/userRoutes");
 
 /**
@@ -34,7 +34,7 @@ app.use(express.urlencoded({ extended: false }));
 
 app.use("/api", apiRouter);
 apiRouter.use("/messages", messageRoutes);
-apiRouter.use("/goals", goalRoutes);
+apiRouter.use("/deals", dealRoutes);
 apiRouter.use("/users", userRoutes);
 app.use(errorHandler);
 
