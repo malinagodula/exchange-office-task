@@ -34,10 +34,8 @@ const ExternalApi = () => {
       );
 
       const responseData = await response.json();
-      console.log(responseData);
       setMessage(responseData.message);
     } catch (error) {
-      console.log(error);
       setMessage(error.message);
     }
   };

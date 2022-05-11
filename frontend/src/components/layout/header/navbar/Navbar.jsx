@@ -26,9 +26,9 @@ const Navbar = () => {
           <li className="ml-2 text-xs">
             <NavLink to="/dashboard">Dashboard</NavLink>
           </li>
-          {/* <li className="ml-2 text-xs">
+          <li className="ml-2 text-xs">
             <NavLink to="/profile">Profile</NavLink>
-          </li> */}
+          </li>
           <li className="ml-2 text-xs">
             <NavLink to="/external-api">API</NavLink>
           </li>

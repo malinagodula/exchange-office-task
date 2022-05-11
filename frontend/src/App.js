@@ -1,10 +1,14 @@
 import "./App.css";
 import { Route, Routes } from "react-router-dom";
+import { useEffect } from "react";
+import { useSelector, useDispatch } from "react-redux";
+import { getLoggedUser } from "./store/auth/authSlice";
 import Header from "./components/layout/header/Header";
+
 // import Footer from "./components/layout/footer/Footer";
 // import Main from "./components/pages/Main/Main";
 import Dashboard from "./components/pages/dashboard/Dashboard";
-// import Profile from "./components/pages/profile/Profile";
+import Profile from "./components/pages/profile/Profile";
 import ExternalApi from "./components/pages/external-api/ExternalApi";
 import Homepage from "./components/pages/homepage/Homepage";
 import Loader from "./components/ui/loader/Loader";
@@ -13,9 +17,18 @@ import Goals from "./components/pages/goals/Goals";
 import { useAuth0 } from "@auth0/auth0-react";
 
 function App() {
-  const { isLoading, isAuthenticated } = useAuth0();
-  console.log(isAuthenticated);
+  const { getAccessTokenSilently } = useAuth0();
+  const dispatch = useDispatch();
+  const { isLoading, isError, message } = useSelector((state) => state.auth);
 
+  useEffect(() => {
+    if (isError) {
+      console.log(message);
+    }
+    getAccessTokenSilently().then((token) => dispatch(getLoggedUser(token)));
+  }, [getAccessTokenSilently, dispatch, isError, message]);
+
+  console.log(getAccessTokenSilently());
   if (isLoading) {
     return <Loader />;
   }
@@ -27,7 +40,7 @@ function App() {
         <Routes>
           <Route path="/" element={<Homepage />} />
           <Route path="/dashboard" element={<Dashboard />} />
-          {/* <Route path="/profile" element={<Profile />} /> */}
+          <Route path="/profile" element={<Profile />} />
           <Route path="/external-api" element={<ExternalApi />} />
           <Route path="/api/goals" element={<Goals />} />
         </Routes>
