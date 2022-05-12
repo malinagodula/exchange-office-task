@@ -51,6 +51,7 @@ app.use(
         objectSrc: ["'self'"],
         mediaSrc: ["'self'"],
         frameSrc: ["'self'", "dev-obkep2cg.us.auth0.com"],
+        upgradeInsecureRequests: [],
       },
     },
   })

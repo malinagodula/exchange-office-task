@@ -25,7 +25,9 @@ function App() {
     if (isError) {
       console.log(message);
     }
-    getAccessTokenSilently().then((token) => dispatch(getLoggedUser(token)));
+    try {
+      getAccessTokenSilently().then((token) => dispatch(getLoggedUser(token)));
+    } catch {}
   }, [getAccessTokenSilently, dispatch, isError, message]);
 
   if (isLoading) {
