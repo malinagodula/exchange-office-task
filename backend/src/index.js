@@ -3,12 +3,14 @@
  */
 
 const express = require("express");
+const dotenv = require("dotenv").config();
 const cors = require("cors");
 const helmet = require("helmet");
 const morgan = require("morgan");
 const path = require("path");
 
 const { clientOrigins, serverPort } = require("./config/env.dev");
+const port = process.env.PORT || 5000;
 const { errorHandler } = require("./middleware/errorMiddleware");
 
 const connectDB = require("./config/db");
@@ -81,6 +83,4 @@ if (process.env.NODE_ENV === "production") {
  * Server Activation
  */
 
-app.listen(serverPort || process.env.PORT || 5000, () =>
-  console.log(`API Server listening on port ${serverPort}`)
-);
+app.listen(port, () => console.log(`API Server listening on port ${port}`));
