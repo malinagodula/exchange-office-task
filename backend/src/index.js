@@ -81,6 +81,6 @@ if (process.env.NODE_ENV === "production") {
  * Server Activation
  */
 
-app.listen(serverPort, () =>
+app.listen(serverPort || 3000, () =>
   console.log(`API Server listening on port ${serverPort}`)
 );
