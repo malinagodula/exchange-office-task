@@ -4,7 +4,7 @@
 const getCurrencies = async () => {
   //   const response = await fetch(`${currencyUrl}`, {
   const response = await fetch(
-    `http://webtask.future-processing.com:8068/currencies`,
+    `https://webtask.future-processing.com:8068/currencies`,
     {
       method: "GET",
       headers: {

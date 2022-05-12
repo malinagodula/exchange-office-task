@@ -35,7 +35,7 @@ app.use(
     contentSecurityPolicy: {
       directives: {
         defaultSrc: ["'self'"],
-        scriptSrc: ["'self'", "'sha256-base64 encoded hash'"],
+        scriptSrc: ["'self'"],
         styleSrc: ["'self'", "https://fonts.googleapis.com", "'unsafe-inline'"],
         imgSrc: [
           "'self'",
