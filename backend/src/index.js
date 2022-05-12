@@ -42,7 +42,11 @@ app.use(
           "data:",
           "https://cdn.auth0.com/blog/auth0-react-sample/assets/loading.svg",
         ],
-        connectSrc: ["'self'", "https://dev-obkep2cg.us.auth0.com/oauth/token"],
+        connectSrc: [
+          "'self'",
+          "https://dev-obkep2cg.us.auth0.com/oauth/token",
+          "http://webtask.future-processing.com:8068/currencies",
+        ],
         fontSrc: ["'self'", "https://fonts.gstatic.com"],
         objectSrc: ["'self'"],
         mediaSrc: ["'self'"],
