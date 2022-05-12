@@ -35,7 +35,7 @@ app.use(
     contentSecurityPolicy: {
       directives: {
         defaultSrc: ["'self'"],
-        scriptSrc: ["'self'"],
+        scriptSrc: ["'self'", "'sha256-base64 encoded hash'"],
         styleSrc: ["'self'", "https://fonts.googleapis.com", "'unsafe-inline'"],
         imgSrc: [
           "'self'",
@@ -45,13 +45,12 @@ app.use(
         connectSrc: [
           "'self'",
           "https://dev-obkep2cg.us.auth0.com/oauth/token",
-          "http://webtask.future-processing.com:8068/currencies",
+          "https://webtask.future-processing.com:8068/currencies",
         ],
         fontSrc: ["'self'", "https://fonts.gstatic.com"],
         objectSrc: ["'self'"],
         mediaSrc: ["'self'"],
         frameSrc: ["'self'", "dev-obkep2cg.us.auth0.com"],
-        upgradeInsecureRequests: [],
       },
     },
   })
